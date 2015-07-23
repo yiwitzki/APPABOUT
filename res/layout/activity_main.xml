@@ -1,0 +1,103 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/feed_item_bg" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="0dp" >
+
+        <Button
+            android:id="@+id/tp_weibo_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="微博"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/tp_wechat_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="微信"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/tp_qq_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="qq"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:baselineAligned="true"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/tp_app_icon_iv"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/lancher_icon" />
+
+        <TextView
+            android:id="@+id/tp_appabout_appname_tv"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Mystery"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tp_appabout_appversion_tv"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Version1.0.0"
+            android:textColor="@color/red"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/tp_update_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="检查更新" />
+
+        <Button
+            android:id="@+id/tp_recommand_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="推荐好友" />
+
+        <Button
+            android:id="@+id/tp_policy_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="服务条款" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="ⓒcopyright,all rights reserved" />
+    </RelativeLayout>
+
+</RelativeLayout>
