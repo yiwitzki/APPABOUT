@@ -8,67 +8,71 @@
 package com.example.appabout;
 
 public final class R {
+    public static final class anim {
+        public static final int tp_mid_to_bottom=0x7f040000;
+        public static final int tp_top_to_mid=0x7f040001;
+    }
     public static final class attr {
     }
     public static final class color {
-        public static final int activity_bg=0x7f04000e;
-        public static final int beige=0x7f04000a;
-        public static final int black=0x7f040003;
-        public static final int bubble_item_divider=0x7f040013;
-        public static final int clear=0x7f040023;
+        public static final int activity_bg=0x7f05000e;
+        public static final int beige=0x7f05000a;
+        public static final int black=0x7f050003;
+        public static final int bubble_item_divider=0x7f050013;
+        public static final int clear=0x7f050023;
         /**  <color name="bubble_item_divider">#DB7093</color>
          */
-        public static final int cover_text_shadow=0x7f040014;
-        public static final int cover_time_shadow=0x7f040015;
-        public static final int cover_track=0x7f040011;
-        public static final int dark_gray=0x7f040009;
-        public static final int emotion_picker_deluxe_avatar_blank=0x7f04001f;
-        public static final int emotion_picker_deluxe_text=0x7f040020;
-        public static final int feed_comment_button_text=0x7f040024;
-        public static final int feed_comment_button_text_pressed=0x7f040026;
-        public static final int feed_comment_button_text_shadow=0x7f040025;
-        public static final int feed_comment_button_text_shadow_pressed=0x7f040027;
-        public static final int feed_item_bg=0x7f04000f;
-        public static final int feed_item_track=0x7f040010;
-        public static final int feed_subtext=0x7f040012;
-        public static final int gray=0x7f040008;
-        public static final int light_gray=0x7f040006;
-        public static final int light_light_gray=0x7f04000b;
-        public static final int lighter_gray=0x7f040005;
-        public static final int line_on_paper=0x7f040022;
-        public static final int lj_setting_background_color=0x7f040037;
-        public static final int lj_touch_color=0x7f040036;
-        public static final int med_gray=0x7f040007;
-        public static final int menu_settings_header_text=0x7f04000d;
-        public static final int moment_ambient_dot_asleep=0x7f04002f;
-        public static final int moment_ambient_dot_awake=0x7f040030;
-        public static final int moment_ambient_dot_cover=0x7f040032;
-        public static final int moment_ambient_dot_distance=0x7f04002e;
-        public static final int moment_ambient_dot_friend=0x7f040031;
-        public static final int moment_ambient_dot_joined=0x7f04002d;
-        public static final int moment_dot_default=0x7f040028;
-        public static final int moment_dot_music=0x7f04002a;
-        public static final int moment_dot_people=0x7f04002c;
-        public static final int moment_dot_place=0x7f04002b;
-        public static final int moment_dot_thought=0x7f040029;
-        public static final int nux_blue_shadow=0x7f040021;
-        public static final int orange=0x7f040001;
-        public static final int overlay_bg=0x7f04000c;
-        public static final int page_subtext=0x7f040017;
-        public static final int page_tab_shadow_pressed=0x7f040019;
-        public static final int page_tab_shadow_released=0x7f04001b;
-        public static final int page_tab_text_pressed=0x7f040018;
-        public static final int page_tab_text_released=0x7f04001a;
-        public static final int path_black=0x7f040004;
-        public static final int permalink_comment_location_text=0x7f04001d;
-        public static final int permalink_comment_send_text=0x7f04001e;
-        public static final int permalink_item_bg=0x7f04001c;
-        public static final int qa_bar_text_shadow=0x7f040016;
-        public static final int red=0x7f040000;
-        public static final int sleep_dialog_background=0x7f040033;
-        public static final int sleep_dialog_time=0x7f040034;
-        public static final int sleep_duration_message=0x7f040035;
-        public static final int white=0x7f040002;
+        public static final int cover_text_shadow=0x7f050014;
+        public static final int cover_time_shadow=0x7f050015;
+        public static final int cover_track=0x7f050011;
+        public static final int dark_gray=0x7f050009;
+        public static final int emotion_picker_deluxe_avatar_blank=0x7f05001f;
+        public static final int emotion_picker_deluxe_text=0x7f050020;
+        public static final int feed_comment_button_text=0x7f050024;
+        public static final int feed_comment_button_text_pressed=0x7f050026;
+        public static final int feed_comment_button_text_shadow=0x7f050025;
+        public static final int feed_comment_button_text_shadow_pressed=0x7f050027;
+        public static final int feed_item_bg=0x7f05000f;
+        public static final int feed_item_track=0x7f050010;
+        public static final int feed_subtext=0x7f050012;
+        public static final int gray=0x7f050008;
+        public static final int light_gray=0x7f050006;
+        public static final int light_light_gray=0x7f05000b;
+        public static final int lighter_gray=0x7f050005;
+        public static final int line_on_paper=0x7f050022;
+        public static final int lj_setting_background_color=0x7f050037;
+        public static final int lj_touch_color=0x7f050036;
+        public static final int med_gray=0x7f050007;
+        public static final int menu_settings_header_text=0x7f05000d;
+        public static final int moment_ambient_dot_asleep=0x7f05002f;
+        public static final int moment_ambient_dot_awake=0x7f050030;
+        public static final int moment_ambient_dot_cover=0x7f050032;
+        public static final int moment_ambient_dot_distance=0x7f05002e;
+        public static final int moment_ambient_dot_friend=0x7f050031;
+        public static final int moment_ambient_dot_joined=0x7f05002d;
+        public static final int moment_dot_default=0x7f050028;
+        public static final int moment_dot_music=0x7f05002a;
+        public static final int moment_dot_people=0x7f05002c;
+        public static final int moment_dot_place=0x7f05002b;
+        public static final int moment_dot_thought=0x7f050029;
+        public static final int nux_blue_shadow=0x7f050021;
+        public static final int orange=0x7f050001;
+        public static final int overlay_bg=0x7f05000c;
+        public static final int page_subtext=0x7f050017;
+        public static final int page_tab_shadow_pressed=0x7f050019;
+        public static final int page_tab_shadow_released=0x7f05001b;
+        public static final int page_tab_text_pressed=0x7f050018;
+        public static final int page_tab_text_released=0x7f05001a;
+        public static final int path_black=0x7f050004;
+        public static final int permalink_comment_location_text=0x7f05001d;
+        public static final int permalink_comment_send_text=0x7f05001e;
+        public static final int permalink_item_bg=0x7f05001c;
+        public static final int qa_bar_text_shadow=0x7f050016;
+        public static final int red=0x7f050000;
+        public static final int sleep_dialog_background=0x7f050033;
+        public static final int sleep_dialog_time=0x7f050034;
+        public static final int sleep_duration_message=0x7f050035;
+        public static final int white=0x7f050002;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -78,39 +82,50 @@ public final class R {
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int lancher_icon=0x7f020001;
-        public static final int yg_abc_ic_ab_back_holo_light=0x7f020002;
+        public static final int bottle_night_bg=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
+        public static final int lancher_icon=0x7f020002;
+        public static final int tp_qq_icon=0x7f020003;
+        public static final int tp_wechat_icon=0x7f020004;
+        public static final int tp_weibo_icon=0x7f020005;
+        public static final int yg_abc_ic_ab_back_holo_light=0x7f020006;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000b;
-        public static final int tp_app_about_actionbar_back=0x7f090009;
-        public static final int tp_app_icon_iv=0x7f090003;
-        public static final int tp_appabout_appname_tv=0x7f090004;
-        public static final int tp_appabout_appversion_tv=0x7f090005;
-        public static final int tp_policy_btn=0x7f090008;
-        public static final int tp_qq_btn=0x7f090002;
-        public static final int tp_recommand_btn=0x7f090007;
-        public static final int tp_sendpostactivity_actionbar_title=0x7f09000a;
-        public static final int tp_update_btn=0x7f090006;
-        public static final int tp_wechat_btn=0x7f090001;
-        public static final int tp_weibo_btn=0x7f090000;
+        public static final int action_settings=0x7f0a0010;
+        public static final int tp_about_buttonlayout=0x7f0a0003;
+        public static final int tp_about_layout=0x7f0a0002;
+        public static final int tp_about_policy_btn=0x7f0a000c;
+        public static final int tp_about_qq_btn=0x7f0a0006;
+        public static final int tp_about_recommand_btn=0x7f0a000b;
+        public static final int tp_about_termofservice_actionbar_title=0x7f0a000d;
+        public static final int tp_about_update_btn=0x7f0a000a;
+        public static final int tp_about_wechat_btn=0x7f0a0005;
+        public static final int tp_about_weibo_btn=0x7f0a0004;
+        public static final int tp_app_about_actionbar_back=0x7f0a0000;
+        public static final int tp_app_about_actionbar_title=0x7f0a0001;
+        public static final int tp_app_icon_iv=0x7f0a0007;
+        public static final int tp_appabout_appname_tv=0x7f0a0008;
+        public static final int tp_appabout_appversion_tv=0x7f0a0009;
+        public static final int tp_termofservicecontent_et=0x7f0a000f;
+        public static final int tp_termofservicetitle_et=0x7f0a000e;
     }
     public static final class layout {
-        public static final int tp_about_activity=0x7f030000;
-        public static final int tp_app_about_actionbar=0x7f030001;
+        public static final int tp_about_actionbar=0x7f030000;
+        public static final int tp_about_activity=0x7f030001;
+        public static final int tp_about_termofservice_actionbar=0x7f030002;
+        public static final int tp_about_termofservice_activity=0x7f030003;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
+        public static final int main=0x7f090000;
     }
     public static final class string {
-        public static final int action_settings=0x7f060002;
-        public static final int app_name=0x7f060000;
-        public static final int hello_world=0x7f060001;
+        public static final int action_settings=0x7f070002;
+        public static final int app_name=0x7f070000;
+        public static final int hello_world=0x7f070001;
     }
     public static final class style {
         /** 
@@ -134,10 +149,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f080001;
     }
 }

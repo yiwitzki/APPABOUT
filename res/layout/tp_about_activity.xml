@@ -1,36 +1,45 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tp_about_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/feed_item_bg" >
 
     <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="0dp" >
+        android:id="@+id/tp_about_buttonlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:alpha="0.8"
+        android:background="@color/white"
+        android:paddingTop="0dp"
+        android:visibility="invisible" >
 
         <Button
-            android:id="@+id/tp_weibo_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="微博"
-            android:visibility="invisible" />
+            android:id="@+id/tp_about_weibo_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/tp_weibo_icon" />
 
         <Button
-            android:id="@+id/tp_wechat_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/tp_about_wechat_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_centerHorizontal="true"
-            android:text="微信"
-            android:visibility="invisible" />
+            android:layout_marginTop="20dp"
+            android:background="@drawable/tp_wechat_icon" />
 
         <Button
-            android:id="@+id/tp_qq_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/tp_about_qq_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_alignParentRight="true"
-            android:text="qq"
-            android:visibility="invisible" />
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/tp_qq_icon" />
     </RelativeLayout>
 
     <LinearLayout
@@ -67,21 +76,21 @@
             android:textSize="12sp" />
 
         <Button
-            android:id="@+id/tp_update_btn"
+            android:id="@+id/tp_about_update_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:text="检查更新" />
 
         <Button
-            android:id="@+id/tp_recommand_btn"
+            android:id="@+id/tp_about_recommand_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="推荐好友" />
 
         <Button
-            android:id="@+id/tp_policy_btn"
+            android:id="@+id/tp_about_policy_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

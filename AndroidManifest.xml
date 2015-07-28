@@ -3,7 +3,6 @@
     package="com.example.appabout"
     android:versionCode="1"
     android:versionName="1.0" >
-
     <uses-sdk
         android:minSdkVersion="19"
         android:targetSdkVersion="21" />
@@ -21,6 +20,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity 
+            android:name="TermOfService_activity">
         </activity>
     </application>
 

@@ -31,7 +31,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tp_sendpostactivity_actionbar_title"
+        android:id="@+id/tp_about_termofservice_actionbar_title"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentLeft="true"
@@ -39,7 +39,7 @@
         android:layout_centerVertical="true"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="关于Mystery"
+        android:text=""
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
