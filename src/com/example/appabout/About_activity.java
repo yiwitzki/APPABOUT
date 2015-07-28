@@ -165,12 +165,12 @@ public class About_activity extends Activity
 			if (arg0 == animationTopToMid)
 			{
 				buttonLayout.setVisibility(View.VISIBLE);
-				Blurry.with(About_activity.this)
+				/*Blurry.with(About_activity.this)
 		        .radius(25)
 		        .sampling(1)
 		        .color(Color.argb(66, 0, 255, 255))
 		        .async()
-		        .onto((ViewGroup) findViewById(R.id.tp_about_layout));
+		        .onto((ViewGroup) findViewById(R.id.tp_about_layout));*/
 			}
 		}
     }
