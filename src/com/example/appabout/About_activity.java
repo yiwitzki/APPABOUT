@@ -2,15 +2,17 @@ package com.example.appabout;
 
 
 
-
-
 import jp.wasabeef.blurry.Blurry;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -28,11 +30,11 @@ import android.widget.RelativeLayout;
 public class About_activity extends Activity 
 {
 	private Button weiBoBtn, weChatBtn, qqBtn, updateBtn, recommandBtn, policyBtn;
-	private ImageView mask;
+	private ImageView mask, blurImageView;
 	private RelativeLayout buttonLayout,aboutLayout;
 	private Animation animationTopToMid, animationMidToBottom;
 	private boolean isRecommandClicked = false;
-	private boolean blurred = false;
+	private final int blurlayout = 0;
 	private final String TAG_ = "About_activity";
     @Override
     protected void onCreate(Bundle savedInstanceState) 
@@ -41,7 +43,6 @@ public class About_activity extends Activity
         setContentView(R.layout.tp_about_activity);
         setupDialogActionBar();
         initview();
-        
     }
     
     private void setupDialogActionBar()
@@ -65,6 +66,7 @@ public class About_activity extends Activity
     {
     	buttonLayout = (RelativeLayout) findViewById(R.id.tp_about_buttonlayout);
     	mask = (ImageView) findViewById(R.id.tp_about_activity_mask);
+    	blurImageView = (ImageView) findViewById(R.id.tp_about_activity_blur);
     	buttonLayout.bringToFront();
     	aboutLayout = (RelativeLayout) findViewById(R.id.tp_about_layout);
     	recommandBtn = (Button) findViewById(R.id.tp_about_recommand_btn);
@@ -109,8 +111,16 @@ public class About_activity extends Activity
 			@Override
 			public void onClick(View arg0) 
 			{
-				if (isRecommandClicked == true)
-					buttonLayout.startAnimation(animationMidToBottom);
+				if (arg0 != buttonLayout)
+				{
+					if (isRecommandClicked == true)
+					{
+						Log.e(TAG_, "aboutLayout click");
+						isRecommandClicked = false;
+						buttonLayout.startAnimation(animationMidToBottom);
+						blurImageView.setVisibility(View.INVISIBLE);
+					}
+				}
 			}
 		});
     	recommandBtn.setOnClickListener(new OnClickListener() 
@@ -118,6 +128,10 @@ public class About_activity extends Activity
 			@Override
 			public void onClick(View arg0) 
 			{
+				isRecommandClicked = true;
+				Message message = Message.obtain();
+				message.what = blurlayout;
+				handler.sendMessage(message);
 				buttonLayout.startAnimation(animationTopToMid);
 				/*if (blurred)
 					Blurry.delete((ViewGroup) findViewById(R.id.tp_about_layout));
@@ -129,7 +143,6 @@ public class About_activity extends Activity
 							.async()
 							.animate(500)
 							.onto((ViewGroup) findViewById(R.id.tp_about_layout));
-					//Blurry.delete((ViewGroup) findViewById(R.id.tp_about_buttonlayout));
 				}
 				blurred = !blurred;*/
 			}
@@ -151,7 +164,7 @@ public class About_activity extends Activity
 				buttonLayout.layout(left, top, left + width, top + height);
 				Log.e(TAG_, "layout animationTopToMid:" + left +" " + top + " " + width + " " + height);
 				buttonLayout.clearAnimation();
-				isRecommandClicked = true;
+				recommandBtn.setEnabled(true);
 			}
 			else if (arg0 == animationMidToBottom)
 			{
@@ -164,8 +177,8 @@ public class About_activity extends Activity
 				buttonLayout.layout(left, top, left + width, top + height);
 				Log.e(TAG_, "layout animationMidToBottom:" + left + " " + top + " " + width + " " + height);
 				buttonLayout.clearAnimation();
-				isRecommandClicked = false;
 				buttonLayout.setVisibility(View.INVISIBLE);
+				recommandBtn.setEnabled(true);
 			}
 		}
 
@@ -181,17 +194,36 @@ public class About_activity extends Activity
 			{
 				buttonLayout.setVisibility(View.VISIBLE);
 				mask.setVisibility(View.VISIBLE);
-				/*Blurry.with(About_activity.this)
-		        .radius(25)
-		        .sampling(1)
-		        .color(Color.argb(66, 0, 255, 255))
-		        .async()
-		        .onto((ViewGroup) findViewById(R.id.tp_about_layout));*/
+				recommandBtn.setEnabled(false);
 			}
 			else if (arg0 == animationMidToBottom)
 			{
 				mask.setVisibility(View.INVISIBLE);
+				recommandBtn.setEnabled(false);
 			}
 		}
     }
+    private boolean blurred = false;
+    private Handler handler = new Handler()
+    {
+		@Override
+		public void handleMessage(Message msg) 
+		{
+			switch (msg.what) 
+			{
+			case blurlayout:
+				RelativeLayout view = (RelativeLayout)findViewById(R.id.tp_about_layout);
+				view.setDrawingCacheEnabled(true);
+				view.buildDrawingCache();
+				Bitmap bm = view.getDrawingCache();
+				bm = Blur.fastblur(bm, 25);
+				blurImageView.setImageBitmap(bm);
+				//blurImageView.setBackgroundColor(Color.BLACK);
+				blurImageView.setVisibility(view.VISIBLE);
+				blurImageView.bringToFront();
+				buttonLayout.bringToFront();
+				break;
+			}
+		}
+	};
 }

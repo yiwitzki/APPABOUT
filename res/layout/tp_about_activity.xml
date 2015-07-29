@@ -3,7 +3,8 @@
     android:id="@+id/tp_about_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/feed_item_bg" >
+    android:background="@color/feed_item_bg"
+    tools:context=".MainActivity" >
 
     <RelativeLayout
         android:id="@+id/tp_about_buttonlayout"
@@ -49,8 +50,14 @@
             android:alpha="0.3"
             android:background="#000"
             android:visibility="gone" />
+    <ImageView
+            android:id="@+id/tp_about_activity_blur"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="gone" />
     
     <LinearLayout
+        android:id="@+id/tp_about_linearlayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
