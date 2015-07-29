@@ -2,6 +2,8 @@ package com.example.appabout;
 
 
 
+
+
 import jp.wasabeef.blurry.Blurry;
 import android.app.ActionBar;
 import android.app.Activity;
@@ -26,9 +28,11 @@ import android.widget.RelativeLayout;
 public class About_activity extends Activity 
 {
 	private Button weiBoBtn, weChatBtn, qqBtn, updateBtn, recommandBtn, policyBtn;
+	private ImageView mask;
 	private RelativeLayout buttonLayout,aboutLayout;
 	private Animation animationTopToMid, animationMidToBottom;
 	private boolean isRecommandClicked = false;
+	private boolean blurred = false;
 	private final String TAG_ = "About_activity";
     @Override
     protected void onCreate(Bundle savedInstanceState) 
@@ -37,6 +41,7 @@ public class About_activity extends Activity
         setContentView(R.layout.tp_about_activity);
         setupDialogActionBar();
         initview();
+        
     }
     
     private void setupDialogActionBar()
@@ -59,6 +64,7 @@ public class About_activity extends Activity
     private void initview()
     {
     	buttonLayout = (RelativeLayout) findViewById(R.id.tp_about_buttonlayout);
+    	mask = (ImageView) findViewById(R.id.tp_about_activity_mask);
     	buttonLayout.bringToFront();
     	aboutLayout = (RelativeLayout) findViewById(R.id.tp_about_layout);
     	recommandBtn = (Button) findViewById(R.id.tp_about_recommand_btn);
@@ -72,19 +78,7 @@ public class About_activity extends Activity
     	animationMidToBottom = AnimationUtils.loadAnimation(About_activity.this, R.anim.tp_mid_to_bottom);
     	animationMidToBottom.setAnimationListener(new onAnimationListener());
     	animationTopToMid.setAnimationListener(new onAnimationListener());
-    	recommandBtn.setOnClickListener(new OnClickListener() 
-    	{
-			@Override
-			public void onClick(View arg0) 
-			{
-				buttonLayout.startAnimation(animationTopToMid);
-				/*Intent sendIntent = new Intent();
-				sendIntent.setAction(Intent.ACTION_SEND);
-				sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
-				sendIntent.setType("text/plain");
-				startActivity(sendIntent);*/
-			}
-		});
+    	
     	policyBtn.setOnClickListener(new OnClickListener() 
         {
 			@Override
@@ -117,6 +111,27 @@ public class About_activity extends Activity
 			{
 				if (isRecommandClicked == true)
 					buttonLayout.startAnimation(animationMidToBottom);
+			}
+		});
+    	recommandBtn.setOnClickListener(new OnClickListener() 
+    	{
+			@Override
+			public void onClick(View arg0) 
+			{
+				buttonLayout.startAnimation(animationTopToMid);
+				/*if (blurred)
+					Blurry.delete((ViewGroup) findViewById(R.id.tp_about_layout));
+				else 
+				{
+					Blurry.with(About_activity.this)
+							.radius(25)
+							.sampling(2)
+							.async()
+							.animate(500)
+							.onto((ViewGroup) findViewById(R.id.tp_about_layout));
+					//Blurry.delete((ViewGroup) findViewById(R.id.tp_about_buttonlayout));
+				}
+				blurred = !blurred;*/
 			}
 		});
     }
@@ -165,12 +180,17 @@ public class About_activity extends Activity
 			if (arg0 == animationTopToMid)
 			{
 				buttonLayout.setVisibility(View.VISIBLE);
+				mask.setVisibility(View.VISIBLE);
 				/*Blurry.with(About_activity.this)
 		        .radius(25)
 		        .sampling(1)
 		        .color(Color.argb(66, 0, 255, 255))
 		        .async()
 		        .onto((ViewGroup) findViewById(R.id.tp_about_layout));*/
+			}
+			else if (arg0 == animationMidToBottom)
+			{
+				mask.setVisibility(View.INVISIBLE);
 			}
 		}
     }
