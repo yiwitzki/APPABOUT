@@ -89,32 +89,39 @@ public final class R {
         public static final int bottle_night_bg=0x7f020000;
         public static final int ic_launcher=0x7f020001;
         public static final int lancher_icon=0x7f020002;
-        public static final int tp_qq_icon=0x7f020003;
-        public static final int tp_wechat_icon=0x7f020004;
-        public static final int tp_weibo_icon=0x7f020005;
-        public static final int yg_abc_ic_ab_back_holo_light=0x7f020006;
+        public static final int logo_qq=0x7f020003;
+        public static final int logo_sinaweibo=0x7f020004;
+        public static final int logo_wechat=0x7f020005;
+        public static final int tp_email_icon=0x7f020006;
+        public static final int tp_messege_icon=0x7f020007;
+        public static final int tp_qq_icon=0x7f020008;
+        public static final int tp_wechat_icon=0x7f020009;
+        public static final int tp_weibo_icon=0x7f02000a;
+        public static final int yg_abc_ic_ab_back_holo_light=0x7f02000b;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0013;
-        public static final int tp_about_activity_blur=0x7f0a0008;
-        public static final int tp_about_activity_mask=0x7f0a0007;
+        public static final int action_settings=0x7f0a0015;
+        public static final int tp_about_activity_blur=0x7f0a000a;
+        public static final int tp_about_activity_mask=0x7f0a0009;
         public static final int tp_about_buttonlayout=0x7f0a0003;
+        public static final int tp_about_email_btn=0x7f0a0008;
         public static final int tp_about_layout=0x7f0a0002;
-        public static final int tp_about_linearlayout=0x7f0a0009;
-        public static final int tp_about_policy_btn=0x7f0a000f;
+        public static final int tp_about_linearlayout=0x7f0a000b;
+        public static final int tp_about_messege_btn=0x7f0a0007;
+        public static final int tp_about_policy_btn=0x7f0a0011;
         public static final int tp_about_qq_btn=0x7f0a0006;
-        public static final int tp_about_recommand_btn=0x7f0a000e;
-        public static final int tp_about_termofservice_actionbar_title=0x7f0a0010;
-        public static final int tp_about_update_btn=0x7f0a000d;
+        public static final int tp_about_recommand_btn=0x7f0a0010;
+        public static final int tp_about_termofservice_actionbar_title=0x7f0a0012;
+        public static final int tp_about_update_btn=0x7f0a000f;
         public static final int tp_about_wechat_btn=0x7f0a0005;
         public static final int tp_about_weibo_btn=0x7f0a0004;
         public static final int tp_app_about_actionbar_back=0x7f0a0000;
         public static final int tp_app_about_actionbar_title=0x7f0a0001;
-        public static final int tp_app_icon_iv=0x7f0a000a;
-        public static final int tp_appabout_appname_tv=0x7f0a000b;
-        public static final int tp_appabout_appversion_tv=0x7f0a000c;
-        public static final int tp_termofservicecontent_et=0x7f0a0012;
-        public static final int tp_termofservicetitle_et=0x7f0a0011;
+        public static final int tp_app_icon_iv=0x7f0a000c;
+        public static final int tp_appabout_appname_tv=0x7f0a000d;
+        public static final int tp_appabout_appversion_tv=0x7f0a000e;
+        public static final int tp_termofservicecontent_et=0x7f0a0014;
+        public static final int tp_termofservicetitle_et=0x7f0a0013;
     }
     public static final class layout {
         public static final int tp_about_actionbar=0x7f030000;

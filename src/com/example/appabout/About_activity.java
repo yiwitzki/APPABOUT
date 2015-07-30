@@ -2,14 +2,14 @@ package com.example.appabout;
 
 
 
-import jp.wasabeef.blurry.Blurry;
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -17,7 +17,6 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
@@ -29,7 +28,7 @@ import android.widget.RelativeLayout;
 
 public class About_activity extends Activity 
 {
-	private Button weiBoBtn, weChatBtn, qqBtn, updateBtn, recommandBtn, policyBtn;
+	private Button weiBoBtn, weChatBtn, qqBtn, updateBtn, recommandBtn, policyBtn, messegeBtn, eMailBtn;
 	private ImageView mask, blurImageView;
 	private RelativeLayout buttonLayout,aboutLayout;
 	private Animation animationTopToMid, animationMidToBottom;
@@ -75,7 +74,8 @@ public class About_activity extends Activity
     	weiBoBtn = (Button) findViewById(R.id.tp_about_weibo_btn);
     	weChatBtn = (Button) findViewById(R.id.tp_about_wechat_btn);
     	qqBtn = (Button) findViewById(R.id.tp_about_qq_btn);
-    	
+    	messegeBtn = (Button) findViewById(R.id.tp_about_messege_btn);
+    	eMailBtn = (Button) findViewById(R.id.tp_about_email_btn);
     	animationTopToMid = AnimationUtils.loadAnimation(About_activity.this, R.anim.tp_top_to_mid);
     	animationMidToBottom = AnimationUtils.loadAnimation(About_activity.this, R.anim.tp_mid_to_bottom);
     	animationMidToBottom.setAnimationListener(new onAnimationListener());
@@ -98,12 +98,81 @@ public class About_activity extends Activity
 				
 			}
 		});
+    	qqBtn.setOnClickListener(new OnClickListener() 
+    	{
+			@Override
+			public void onClick(View arg0) 
+			{
+				Log.e(TAG_, "weiBoBtn click");
+				Intent intent = new Intent("android.intent.action.SEND");
+				intent.putExtra(Intent.EXTRA_SUBJECT, "123");
+				intent.putExtra(Intent.EXTRA_TEXT, "123");
+				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				intent.setType("text/plain");
+				intent.setComponent(new ComponentName("com.tencent.mobileqq","com.tencent.mobileqq.activity.JumpActivity"));
+				About_activity.this.startActivity(intent);
+			}
+		});
     	weiBoBtn.setOnClickListener(new OnClickListener() 
     	{
 			@Override
 			public void onClick(View arg0) 
 			{
 				Log.e(TAG_, "weiBoBtn click");
+				Intent intent = new Intent("android.intent.action.SEND");
+				intent.putExtra(Intent.EXTRA_SUBJECT, "123");
+				intent.putExtra(Intent.EXTRA_TEXT, "123");
+				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				intent.setType("text/plain");
+				intent.setComponent(new ComponentName("com.sina.weibo","com.sina.weibo.EditActivity"));
+				About_activity.this.startActivity(intent);
+			}
+		});
+    	weChatBtn.setOnClickListener(new OnClickListener() 
+    	{
+			@Override
+			public void onClick(View arg0) 
+			{
+				Log.e(TAG_, "weiBoBtn click");
+				Intent intent = new Intent("android.intent.action.SEND");
+				intent.putExtra(Intent.EXTRA_SUBJECT, "123");
+				intent.putExtra(Intent.EXTRA_TEXT, "123");
+				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				intent.setType("text/plain");
+				intent.setComponent(new ComponentName("com.tencent.mm.ui.tools.ShareImgUI","com.tencent.mm"));
+				About_activity.this.startActivity(intent);
+			}
+		});
+    	eMailBtn.setOnClickListener(new OnClickListener() 
+    	{
+			@Override
+			public void onClick(View arg0) 
+			{
+				 Intent email =  new  Intent(android.content.Intent.ACTION_SEND);  
+		         email.setType( "plain/text" );  
+		         String emailSubject =  "共享软件";
+		         String emailBody = "2312312";
+		          //设置邮件默认地址   
+		         // email.putExtra(android.content.Intent.EXTRA_EMAIL, emailReciver);   
+		          //设置邮件默认标题   
+		         email.putExtra(android.content.Intent.EXTRA_SUBJECT, emailSubject);  
+		          //设置要默认发送的内容   
+		         email.putExtra(android.content.Intent.EXTRA_TEXT, emailBody);  
+		          //调用系统的邮件系统   
+		         startActivityForResult(Intent.createChooser(email,  "请选择邮件发送软件" ),1001 );  
+			}
+		});
+    	messegeBtn.setOnClickListener(new OnClickListener() 
+    	{
+			@Override
+			public void onClick(View arg0) 
+			{
+				Uri smsToUri = Uri.parse( "smsto:" );  
+			    Intent sendIntent =  new  Intent(Intent.ACTION_VIEW, smsToUri);  
+			     //sendIntent.putExtra("address", "123456"); // 电话号码，这行去掉的话，默认就没有电话   
+			    sendIntent.putExtra( "sms_body" ,  "我要共享这个软件" );  
+			    sendIntent.setType( "vnd.android-dir/mms-sms" );  
+			    startActivityForResult(sendIntent, 1002 );  
 			}
 		});
     	aboutLayout.setOnClickListener(new OnClickListener() 
@@ -203,7 +272,6 @@ public class About_activity extends Activity
 			}
 		}
     }
-    private boolean blurred = false;
     private Handler handler = new Handler()
     {
 		@Override
@@ -219,11 +287,27 @@ public class About_activity extends Activity
 				bm = Blur.fastblur(bm, 25);
 				blurImageView.setImageBitmap(bm);
 				//blurImageView.setBackgroundColor(Color.BLACK);
-				blurImageView.setVisibility(view.VISIBLE);
+				blurImageView.setVisibility(View.VISIBLE);
 				blurImageView.bringToFront();
 				buttonLayout.bringToFront();
 				break;
 			}
 		}
 	};
+	/*@Override  
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {  
+        // 根据上面发送过去的请求吗来区别  
+        switch (requestCode) {  
+        case 1001:
+        	buttonLayout.startAnimation(animationMidToBottom);
+        	blurImageView.setVisibility(View.INVISIBLE);
+            break;  
+        case 1002:  
+        	buttonLayout.startAnimation(animationMidToBottom);
+        	blurImageView.setVisibility(View.INVISIBLE);
+            break;  
+        default:  
+            break;  
+        }  
+    }  */
 }

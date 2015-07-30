@@ -41,21 +41,40 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/tp_qq_icon" />
+
+        <Button
+            android:id="@+id/tp_about_messege_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignLeft="@+id/tp_about_weibo_btn"
+            android:layout_below="@+id/tp_about_weibo_btn"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/tp_messege_icon" />
+
+        <Button
+            android:id="@+id/tp_about_email_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignLeft="@+id/tp_about_wechat_btn"
+            android:layout_below="@+id/tp_about_wechat_btn"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/tp_email_icon" />
     </RelativeLayout>
-	
+
     <ImageView
-            android:id="@+id/tp_about_activity_mask"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:alpha="0.3"
-            android:background="#000"
-            android:visibility="gone" />
+        android:id="@+id/tp_about_activity_mask"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:alpha="0.3"
+        android:background="#000"
+        android:visibility="gone" />
+
     <ImageView
-            android:id="@+id/tp_about_activity_blur"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:visibility="gone" />
-    
+        android:id="@+id/tp_about_activity_blur"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone" />
+
     <LinearLayout
         android:id="@+id/tp_about_linearlayout"
         android:layout_width="wrap_content"
@@ -95,6 +114,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:gravity="center"
             android:text="检查更新" />
 
         <Button
@@ -102,6 +122,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:gravity="center"
             android:text="推荐好友" />
 
         <Button
